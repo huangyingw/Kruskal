@@ -1,3 +1,33 @@
-设有一个有n个顶点的连通网络N={V，E}，最初先构造一个只有n个顶点，没有边的非连通图T={V，@},图中每个顶点自成一个连通分量。当在E中选到一个具有最小权值的边时，若该边的两个顶点落
-在两个不同的连通分量上，则将此边加入到T中;否则将此边舍去，重新选择一条权值最小的边。如此重复下去，直到所有顶点在同一个连通分量上为止。
-这个算法勉强算是搞定了，不过，有点问题，就是最后的那个6,3拿不掉。
+========================================================================
+    CONSOLE APPLICATION : kruskal Project Overview
+========================================================================
+
+AppWizard has created this kruskal application for you.
+
+This file contains a summary of what you will find in each of the files that
+make up your kruskal application.
+
+
+kruskal.vcproj
+    This is the main project file for VC++ projects generated using an Application Wizard.
+    It contains information about the version of Visual C++ that generated the file, and
+    information about the platforms, configurations, and project features selected with the
+    Application Wizard.
+
+kruskal.cpp
+    This is the main application source file.
+
+/////////////////////////////////////////////////////////////////////////////
+Other standard files:
+
+StdAfx.h, StdAfx.cpp
+    These files are used to build a precompiled header (PCH) file
+    named kruskal.pch and a precompiled types file named StdAfx.obj.
+
+/////////////////////////////////////////////////////////////////////////////
+Other notes:
+
+AppWizard uses "TODO:" comments to indicate parts of the source code you
+should add to or customize.
+
+/////////////////////////////////////////////////////////////////////////////
