@@ -15,12 +15,12 @@ typedef struct
 	int weight;//弧的权值
 }AdjMatrix[MAX][MAX];
 
-typedef struct 
+typedef struct //图用邻接矩阵表示
 {
 	char vexs[20];
 	int vexNum,arcNum;
 	AdjMatrix adjMatrix;
-}MGraph_L;
+}Graph_AdjMatrix;
 
 typedef struct node//弧结点
 {
@@ -62,7 +62,7 @@ public:
 };
 
 
-int CreatMGraph_L(MGraph_L &G,int* data,int dim)//创建图用邻接矩阵表示
+int CreatMGraph_L(Graph_AdjMatrix &G,int* data,int dim)//创建图用邻接矩阵表示
 {
 	G.vexNum=7;
 	G.arcNum=9;
@@ -87,7 +87,7 @@ int CreatMGraph_L(MGraph_L &G,int* data,int dim)//创建图用邻接矩阵表示
 	return G.vexNum;
 }
 
-void CreatAdj(Algraph &gra,MGraph_L G)//用邻接表存储图
+void CreatAdj(Algraph &gra,Graph_AdjMatrix G)//用邻接表存储图
 {
 	EdgeNode *arc;
 	for(int i=0;i<G.vexNum;++i)
@@ -138,7 +138,7 @@ int Find(int adjNode[],int f)//找未被访问过的弧的下标
 	return f;
 }
 
-void Kruscal_Arc(MGraph_L G,Algraph gra)
+void Kruscal_Arc(Graph_AdjMatrix G,Algraph gra)
 { 
 	//初始化edgs数组
 	Edg edgs[20];

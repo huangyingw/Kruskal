@@ -8,7 +8,7 @@
 int _tmain(int argc, _TCHAR* argv[])
 {
 	Algraph gra;
-	MGraph_L G;
+	Graph_AdjMatrix G;
 	int data[7][7]={{INT_MAX,28,INT_MAX,INT_MAX,INT_MAX,10,INT_MAX},
 					{28,INT_MAX,16,INT_MAX,INT_MAX,INT_MAX,14},
 					{INT_MAX,16,INT_MAX,12,INT_MAX,INT_MAX,INT_MAX},
