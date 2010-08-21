@@ -40,7 +40,7 @@ typedef struct//图的定义
 	VertexNode vertices[MAX];
 	int vexNum,arcNum;
 	int kind;
-}Algraph;
+}Graph;
 
 //………………………………………………………………………
 typedef struct Arc
@@ -86,7 +86,7 @@ int Create_Graph_AdjMatrix(Graph_AdjMatrix &G,int* data,int dim)//创建图用邻接矩
 	return G.vexNum;
 }
 
-void CreatAdj(Algraph &gra,Graph_AdjMatrix G)//用邻接表存储图
+void CreatAdj(Graph &gra,Graph_AdjMatrix G)//用邻接表存储图
 {
 	EdgeNode *arc;
 	for(int i=0;i<G.vexNum;++i)
@@ -137,7 +137,7 @@ int Find(int adjNode[],int f)//找未被访问过的弧的下标
 	return f;
 }
 
-void Kruscal_Arc(Graph_AdjMatrix G,Algraph gra)
+void Kruscal_Arc(Graph_AdjMatrix G,Graph gra)
 { 
 	//初始化edgs数组
 	Edg edgs[20];
