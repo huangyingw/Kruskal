@@ -8,7 +8,7 @@
 int _tmain(int argc, _TCHAR* argv[])
 {
 	Graph gra;
-	Graph_AdjMatrix G;
+	Graph_AdjMatrix gam;
 	int data[7][7]={{INT_MAX,28,INT_MAX,INT_MAX,INT_MAX,10,INT_MAX},
 					{28,INT_MAX,16,INT_MAX,INT_MAX,INT_MAX,14},
 					{INT_MAX,16,INT_MAX,12,INT_MAX,INT_MAX,INT_MAX},
@@ -16,10 +16,10 @@ int _tmain(int argc, _TCHAR* argv[])
 					{INT_MAX,INT_MAX,INT_MAX,22,INT_MAX,25,24},
 					{10,INT_MAX,INT_MAX,INT_MAX,25,INT_MAX,INT_MAX},
 					{INT_MAX,14,INT_MAX,18,24,INT_MAX,INT_MAX}};
-	Create_Graph_AdjMatrix(G,*data,7);//创建图用邻接矩阵表示
-	CreatAdj(gra,G);
+	Create_Graph_AdjMatrix(gam,*data,7);//创建图用邻接矩阵表示
+	CreatAdj(gra,gam);
 
 	cout<<"Kruscal:"<<endl;
-	Kruscal_Arc(G,gra);
+	Kruscal_Arc(gam,gra);
 	return 0;
 }

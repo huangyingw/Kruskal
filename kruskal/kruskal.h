@@ -61,69 +61,69 @@ public:
 };
 
 
-int Create_Graph_AdjMatrix(Graph_AdjMatrix &G,int* data,int dim)//创建图用邻接矩阵表示
+int Create_Graph_AdjMatrix(Graph_AdjMatrix &gam,int* data,int dim)//创建图用邻接矩阵表示
 {
-	G.vexNum=7;
-	G.arcNum=9;
+	gam.vexNum=7;
+	gam.arcNum=9;
 	for(int i=0;i<dim;i++)
 	{
-		for(int j=0;j!=G.vexNum;++j)
+		for(int j=0;j!=gam.vexNum;++j)
 		{ 
-			G.adjMatrix[i][j].weight=INT_MAX;
+			gam.adjMatrix[i][j].weight=INT_MAX;
 		}
 			
-		_itoa_s( i, &G.vexs[i],8,10);
+		_itoa_s( i, &gam.vexs[i],8,10);
 
 		for(int j=0;j<dim;j++)
 		{
 			if(data[dim*i+j]<INT_MAX)
 			{
-				G.adjMatrix[i][j].weight=data[dim*i+j];
-				G.adjMatrix[j][i].weight=data[dim*i+j];
+				gam.adjMatrix[i][j].weight=data[dim*i+j];
+				gam.adjMatrix[j][i].weight=data[dim*i+j];
 			}
 		}
 	}
-	return G.vexNum;
+	return gam.vexNum;
 }
 
-void CreatAdj(Graph &gra,Graph_AdjMatrix G)//用邻接表存储图
+void CreatAdj(Graph &gra,Graph_AdjMatrix gam)//用邻接表存储图
 {
 	EdgeNode *arc;
-	for(int i=0;i<G.vexNum;++i)
+	for(int i=0;i<gam.vexNum;++i)
 	{
-		gra.vertices[i].vertex=G.vexs[i];
+		gra.vertices[i].vertex=gam.vexs[i];
 		gra.vertices[i].firstEdge=NULL;
 	}
-	for(int i=0;i<G.vexNum;++i)
+	for(int i=0;i<gam.vexNum;++i)
 	{
-		for(int j=0;j<G.vexNum;++j)
+		for(int j=0;j<gam.vexNum;++j)
 		{
 			if(gra.vertices[i].firstEdge==NULL)
 			{
-				if(G.adjMatrix[i][j].weight>0&&G.adjMatrix[i][j].weight<INT_MAX&&j<G.vexNum)
+				if(gam.adjMatrix[i][j].weight>0&&gam.adjMatrix[i][j].weight<INT_MAX&&j<gam.vexNum)
 				{
 					arc=new EdgeNode();
 					arc->adjvex=j;
-					arc->weight=G.adjMatrix[i][j].weight;
+					arc->weight=gam.adjMatrix[i][j].weight;
 					arc->next=NULL;
 					gra.vertices[i].firstEdge=arc;
 				}
 			}
 			else
 			{
-				if(G.adjMatrix[i][j].weight>0&&G.adjMatrix[i][j].weight<INT_MAX&&j<G.vexNum)
+				if(gam.adjMatrix[i][j].weight>0&&gam.adjMatrix[i][j].weight<INT_MAX&&j<gam.vexNum)
 				{
 					arc=new EdgeNode();
 					arc->adjvex=j;
-					arc->weight=G.adjMatrix[i][j].weight;
+					arc->weight=gam.adjMatrix[i][j].weight;
 					arc->next=gra.vertices[i].firstEdge;
 					gra.vertices[i].firstEdge=arc;
 				}
 			}
 		}
 	}
-	gra.vexNum=G.vexNum;
-	gra.arcNum=G.arcNum;
+	gra.vexNum=gam.vexNum;
+	gra.arcNum=gam.arcNum;
 }
 
 
@@ -137,20 +137,20 @@ int Find(int adjNode[],int f)//找未被访问过的弧的下标
 	return f;
 }
 
-void Kruscal_Arc(Graph_AdjMatrix G,Graph gra)
+void Kruscal_Arc(Graph_AdjMatrix gam,Graph gra)
 { 
 	//初始化edgs数组
 	Edg edgs[20];
 	int k=0;
-	for(int i=0;i<G.vexNum;++i)
+	for(int i=0;i<gam.vexNum;++i)
 	{
-		for(int j=i;j<G.vexNum;++j)
+		for(int j=i;j<gam.vexNum;++j)
 		{
-			if(G.adjMatrix[i][j].weight<INT_MAX)
+			if(gam.adjMatrix[i][j].weight<INT_MAX)
 			{
 				edgs[k].pre=i;
 				edgs[k].next=j;
-				edgs[k].weight=G.adjMatrix[i][j].weight;
+				edgs[k].weight=gam.adjMatrix[i][j].weight;
 				edgs[k].isVisited=false;
 				++k;
 			}
@@ -160,11 +160,11 @@ void Kruscal_Arc(Graph_AdjMatrix G,Graph gra)
 	int preMIN,nextMIN,weightMIN,indexMIN,begG,endG;
 	for(int i=0;i<gra.arcNum;++i)
 		adjNode[i]=0; 
-	for(int j=0;j<G.arcNum;++j)
+	for(int j=0;j<gam.arcNum;++j)
 	{
 		//寻找weight值最小的edges,就是最小弧
 		weightMIN=INT_MAX;
-		for(int i=0;i<G.arcNum;++i)
+		for(int i=0;i<gam.arcNum;++i)
 		{
 			if(!edgs[i].isVisited&&edgs[i].weight<weightMIN)
 			{
