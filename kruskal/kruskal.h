@@ -70,10 +70,15 @@ public:
 
 Kruskal::Kruskal(int *data,int dim)
 {
+	fout.open("output.txt");
 	Create_Graph_AdjMatrix(gam,data,7);//创建图用邻接矩阵表示
 	CreatAdj(gra,gam);
 }
 
+Kruskal::~Kruskal()
+{
+	fout.close();
+}
 
 int Kruskal::Create_Graph_AdjMatrix(Graph_AdjMatrix &gam,int* data,int dim)//创建图用邻接矩阵表示
 {
