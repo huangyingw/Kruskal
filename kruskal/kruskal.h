@@ -1,5 +1,7 @@
+#include <fstream>
 #include <iostream>
 using namespace std; 
+
 #define INT_MAX 10000
 #define MAX 20
 
@@ -49,6 +51,16 @@ typedef struct Arc
 	int weight;//弧的权
 	bool isVisited;//标记弧是否被访问过
 }Edg;
+
+class Kruskal
+{
+private:
+	ofstream fout;
+
+public:
+	
+};
+
 
 int CreatMGraph_L(MGraph_L &G,int* data,int dim)//创建图用邻接矩阵表示
 {
