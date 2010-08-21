@@ -3,6 +3,7 @@
 #include <iostream>
 #include <malloc.h>
 #include <stdlib.h>
+#include "kruskal.h"
 using namespace std; 
 #define INT_MAX 10000
 #define MAX 20
