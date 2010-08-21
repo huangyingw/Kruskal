@@ -16,7 +16,7 @@ int _tmain(int argc, _TCHAR* argv[])
 					{INT_MAX,INT_MAX,INT_MAX,22,INT_MAX,25,24},
 					{10,INT_MAX,INT_MAX,INT_MAX,25,INT_MAX,INT_MAX},
 					{INT_MAX,14,INT_MAX,18,24,INT_MAX,INT_MAX}};
-	CreatMGraph_L(G,*data,7);//创建图用邻接矩阵表示
+	Create_Graph_AdjMatrix(G,*data,7);//创建图用邻接矩阵表示
 	CreatAdj(gra,G);
 
 	cout<<"Kruscal:"<<endl;

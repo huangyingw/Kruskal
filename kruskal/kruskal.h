@@ -29,9 +29,8 @@ typedef struct node//弧结点
 	int weight;
 }EdgeNode;
 
-typedef struct
+typedef struct//顶点表结点
 {
-	//顶点表结点
 	char vertex;//顶点域
 	EdgeNode *firstEdge;//边表头指针
 }VertexNode;
@@ -62,7 +61,7 @@ public:
 };
 
 
-int CreatMGraph_L(Graph_AdjMatrix &G,int* data,int dim)//创建图用邻接矩阵表示
+int Create_Graph_AdjMatrix(Graph_AdjMatrix &G,int* data,int dim)//创建图用邻接矩阵表示
 {
 	G.vexNum=7;
 	G.arcNum=9;
