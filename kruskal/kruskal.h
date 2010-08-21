@@ -63,6 +63,7 @@ public:
 	~Kruskal();
 	int Create_Graph_AdjMatrix(Graph_AdjMatrix &gam,int* data,int dim);//创建图用邻接矩阵表示
 	void CreatAdj(Graph &gra,Graph_AdjMatrix gam);//用邻接表存储图
+	void Kruskal::Kruscal_Arc();
 	
 };
 
@@ -149,7 +150,7 @@ int Find(int adjNode[],int f)//找未被访问过的弧的下标
 	return f;
 }
 
-void Kruscal_Arc(Graph_AdjMatrix gam,Graph gra)
+void Kruskal::Kruscal_Arc()
 { 
 	//初始化edgs数组
 	Edg edgs[20];

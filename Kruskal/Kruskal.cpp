@@ -20,6 +20,6 @@ int _tmain(int argc, _TCHAR* argv[])
 	Kruskal* kruskal=new Kruskal(*data,7);
 
 	cout<<"Kruscal:"<<endl;
-	//Kruscal_Arc(gam,gra);
+	kruskal->Kruscal_Arc();
 	return 0;
 }
