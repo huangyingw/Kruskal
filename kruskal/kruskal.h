@@ -1,3 +1,11 @@
+#include <iostream>
+using namespace std; 
+#define INT_MAX 10000
+#define MAX 20
+
+int adjNode[MAX];//Kruscal弧标记数组,等于0表示弧未曾被访问过,非0值表示紧邻它的节点下标。
+
+
 //…………………………………………邻接矩阵定义……………………
 typedef struct 
 {
