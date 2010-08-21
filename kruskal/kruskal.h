@@ -57,11 +57,23 @@ private:
 	ofstream fout;
 
 public:
+	Graph gra;
+	Graph_AdjMatrix gam;
+	Kruskal(int *data,int dim);
+	~Kruskal();
+	int Create_Graph_AdjMatrix(Graph_AdjMatrix &gam,int* data,int dim);//创建图用邻接矩阵表示
+	void CreatAdj(Graph &gra,Graph_AdjMatrix gam);//用邻接表存储图
 	
 };
 
+Kruskal::Kruskal(int *data,int dim)
+{
+	Create_Graph_AdjMatrix(gam,data,7);//创建图用邻接矩阵表示
+	CreatAdj(gra,gam);
+}
 
-int Create_Graph_AdjMatrix(Graph_AdjMatrix &gam,int* data,int dim)//创建图用邻接矩阵表示
+
+int Kruskal::Create_Graph_AdjMatrix(Graph_AdjMatrix &gam,int* data,int dim)//创建图用邻接矩阵表示
 {
 	gam.vexNum=7;
 	gam.arcNum=9;
@@ -86,7 +98,7 @@ int Create_Graph_AdjMatrix(Graph_AdjMatrix &gam,int* data,int dim)//创建图用邻接
 	return gam.vexNum;
 }
 
-void CreatAdj(Graph &gra,Graph_AdjMatrix gam)//用邻接表存储图
+void Kruskal::CreatAdj(Graph &gra,Graph_AdjMatrix gam)//用邻接表存储图
 {
 	EdgeNode *arc;
 	for(int i=0;i<gam.vexNum;++i)
