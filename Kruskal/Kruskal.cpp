@@ -17,8 +17,8 @@ int _tmain(int argc, _TCHAR* argv[])
 					{INT_MAX,INT_MAX,INT_MAX,22,INT_MAX,25,24},
 					{10,INT_MAX,INT_MAX,INT_MAX,25,INT_MAX,INT_MAX},
 					{INT_MAX,14,INT_MAX,18,24,INT_MAX,INT_MAX}};
-	Kruskal* kruskal=new Kruskal(*data,7);
 
+	Kruskal* kruskal=new Kruskal(*data,7);
 	cout<<"Kruscal:"<<endl;
 	kruskal->Kruscal_Arc();
 	return 0;
